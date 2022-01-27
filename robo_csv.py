@@ -90,9 +90,6 @@ for subarquivo in subarquivos:
         inicio = (dataInicio[4]+dataInicio[5]+dataInicio[6]+dataInicio[7]+dataInicio[2]+dataInicio[3]+dataInicio[0]+dataInicio[1])
         fim = (dataFim[4]+dataFim[5]+dataFim[6]+dataFim[7]+dataFim[2]+dataFim[3]+dataFim[0]+dataFim[1])
 
-        print(inicio)
-        print(fim)   
-
         relatorio.append([particionado[6].group(), particionado[5].group(), particionado[7].group(), dataInicio, dataFim])
         relatorioCsv.append([particionado[6].group(), particionado[5].group(), particionado[7].group(), inicio, fim])
 
@@ -122,4 +119,4 @@ for subarquivo in subarquivos:
 relatorioFinal = pd.DataFrame(relatorio)
 paraCSV = pd.DataFrame(relatorioCsv)
 gerar_relatorio.gerar_relatorio(relatorioFinal)
-paraCSV.to_csv(f"relatorio_"+relatorioFinal.loc[0,0]+'.csv', sep=';')
+paraCSV.to_csv(f"relatorio_"+relatorioFinal.loc[0,0]+'.csv', sep=';', index=False, header=False)

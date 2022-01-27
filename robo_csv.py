@@ -122,4 +122,4 @@ for subarquivo in subarquivos:
 relatorioFinal = pd.DataFrame(relatorio)
 paraCSV = pd.DataFrame(relatorioCsv)
 gerar_relatorio.gerar_relatorio(relatorioFinal)
-paraCSV.to_csv(f"relatorio_"+relatorioFinal.loc[0,0]+'.csv')
+paraCSV.to_csv(f"relatorio_"+relatorioFinal.loc[0,0]+'.csv', sep=';')
